@@ -6,7 +6,9 @@
   "scripts": {
     "start": "nodemon -e js,ejs",
     "start:pord": "node index.js",
+    "pretest": "NODE_ENV=test npx sequelize-cli db:drop && NODE_ENV=test npx sequelize-cli db:create";
     "test": "echo \"Error: no test specified\" && exit 1"
+    "int-test":"mocha --require babel-core/register --recursive test"
   },
   "lint-staged": {
     "*.js": [
